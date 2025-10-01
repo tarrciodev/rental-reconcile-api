@@ -1,0 +1,39 @@
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+    "name": "Tarcisio",
+    "email": "tarcisiodevmaster45@gmail.com",
+    "password": "123456"
+}
+
+###
+
+GET http://localhost:8080/users
+
+###
+
+POST https://ninfra.tonile-angola.com/webhook-test/82a70837-f1ea-43e0-bc6b-e06b78d689c7
+Content-Type: application/json
+
+{
+    "name": "Tarcisio",
+    "email": "tarcisiodevmaster@gmail.com",
+    "password": "123456"
+}
+
+###
+
+GET http://localhost:8080/transaction
+
+###
+
+GET http://localhost:8080/excel
+
+###
+
+DELETE https://rental.toline-angola.com/clean
+
+###
+
+POST http://localhost:8080/api/reports/execute-reconciliation
