@@ -4,10 +4,10 @@ services:
         image: tarrciodev/rental-reconcile-api-v4
         container_name: rental-v0
         environment:
-            - SPRING_DATASOURCE_URL=jdbc:postgresql://dpg-d3en5sd6ubrc73d2onp0-a.oregon-postgres.render.com:5432/rental_reconcile?sslmode=require
-            - SPRING_DATASOURCE_USERNAME=rental_reconcile_user
-            - SPRING_DATASOURCE_PASSWORD=QOjuPYAvBxPy9WdtGdl1NDCDvDBcby42
-            - N8N_WEBHOOK_URL=https://ninfra.tonile-angola.com/webhook-test/df0788b3-14b3-437c-a3bc-bb904fb81450
+            - SPRING_DATASOURCE_URL={{}}
+            - SPRING_DATASOURCE_USERNAME={{}}
+            - SPRING_DATASOURCE_PASSWORD={{}}
+            - N8N_WEBHOOK_URL={{}}
         ports:
             - "8080:8080"
         restart: always
