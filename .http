@@ -9,21 +9,6 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/users
-
-###
-
-POST https://ninfra.tonile-angola.com/webhook-test/82a70837-f1ea-43e0-bc6b-e06b78d689c7
-Content-Type: application/json
-
-{
-    "name": "Tarcisio",
-    "email": "tarcisiodevmaster@gmail.com",
-    "password": "123456"
-}
-
-###
-
 GET http://localhost:8080/transaction
 
 ###
@@ -37,5 +22,3 @@ DELETE http://localhost:8080/transactions/clean
 ###
 
 GET http://localhost:8080/api/health
-
-###
