@@ -3,6 +3,7 @@ package tarrciodev.com.reconcile.controllers;
 import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +15,7 @@ import reactor.core.publisher.Mono;
 import tarrciodev.com.reconcile.UseCases.UploadTransactionsUseCase;
 
 @RestController
+@CrossOrigin(origins = "*") 
 @RequestMapping("/api/transactions")
 @RequiredArgsConstructor
 public class TransactionController {

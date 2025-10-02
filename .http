@@ -32,8 +32,10 @@ GET http://localhost:8080/excel
 
 ###
 
-DELETE https://rental.toline-angola.com/clean
+DELETE http://localhost:8080/transactions/clean
 
 ###
 
-POST http://localhost:8080/api/reports/execute-reconciliation
+GET http://localhost:8080/api/health
+
+###

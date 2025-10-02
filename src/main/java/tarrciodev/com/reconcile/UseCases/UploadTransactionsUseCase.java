@@ -22,13 +22,11 @@ public class UploadTransactionsUseCase {
     private final FileProcessingService fileProcessingService;
     private final TransactionService transactionService;
     private final ReconciliationService reconciliationService;
-
     public Mono<ResponseEntity<?>> execute(MultipartFile[] files) {
         return fileProcessingService.uploadToN8n(files) 
                 .flatMap(n8nResponse -> 
                     transactionService.processAndSaveN8nData(n8nResponse) 
                         .map(result -> {
-                            
                             Map<String, Object> responseBody = new HashMap<>();
                             responseBody.put("success", true);
                             responseBody.put("message", "Data processed and saved successfully");
@@ -37,7 +35,6 @@ public class UploadTransactionsUseCase {
                             responseBody.put("totalRecordsSaved", result.getTotalSaved());
                             List<ReconciliationSummaryDTO> reconciliation = reconciliationService.reconcile();
                             responseBody.put("reconciliation", reconciliation);
-
                             return ResponseEntity.ok(responseBody);
                         })
                 );

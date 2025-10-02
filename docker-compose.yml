@@ -1,26 +1,13 @@
+version: "3.8"
 services:
-    postgres:
-        image: ankane/pgvector:latest
-        container_name: reconcile-api-postgres-1
-        environment:
-            POSTGRES_DB: mydb
-            POSTGRES_USER: myuser
-            POSTGRES_PASSWORD: mypassword
-        ports:
-            - "5430:5432" # acesso externo: localhost:5430
-        restart: always
-
     reconcile:
-        image: tarrciodev/reconcile-api-v4:latest
-        container_name: reconcile-api-v4
-        depends_on:
-            - postgres
+        image: tarrciodev/rental-reconcile-api-v4
+        container_name: rental-v0
         environment:
-            SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/mydb
-            SPRING_DATASOURCE_USERNAME: myuser
-            SPRING_DATASOURCE_PASSWORD: mypassword
-            N8N_WEBHOOK_URL: https://ninfra.tonile-angola.com/webhook-test/df0788b3-14b3-437c-a3bc-bb904fb81450
-
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://dpg-d3en5sd6ubrc73d2onp0-a.oregon-postgres.render.com:5432/rental_reconcile?sslmode=require
+            - SPRING_DATASOURCE_USERNAME=rental_reconcile_user
+            - SPRING_DATASOURCE_PASSWORD=QOjuPYAvBxPy9WdtGdl1NDCDvDBcby42
+            - N8N_WEBHOOK_URL=https://ninfra.tonile-angola.com/webhook-test/df0788b3-14b3-437c-a3bc-bb904fb81450
         ports:
             - "8080:8080"
         restart: always
